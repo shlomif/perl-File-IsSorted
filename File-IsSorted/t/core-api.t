@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use autodie;
 
-use Test::More tests => 2;
+use Test::More tests => 3;
 
 use Path::Tiny qw/ path tempdir tempfile cwd /;
 
@@ -18,6 +18,12 @@ b
 d
 j
 u
+EOF
+
+my $BAD_TEXT = <<'EOF';
+a
+d
+b
 EOF
 
 {
@@ -38,4 +44,18 @@ EOF
     # TEST
     ok( scalar( $sorter->is_file_sorted( { path => "$fh", } ) ),
         "simple path test" );
+}
+
+{
+    my $fh = $dir->child('bad.txt');
+    $fh->spew_raw($BAD_TEXT);
+
+    my $sorter = File::IsSorted->new;
+
+    # TEST
+    my $verdict;
+    eval { $verdict = $sorter->is_file_sorted( { path => "$fh", } ); };
+    my $Err = $@;
+
+    like( $Err, qr/less/, "bad input throws" );
 }
