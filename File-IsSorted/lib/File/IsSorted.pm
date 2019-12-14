@@ -3,6 +3,7 @@ package File::IsSorted;
 use strict;
 use warnings;
 use autodie;
+use 5.016;
 no locale;
 
 use Moo;
@@ -50,6 +51,14 @@ __END__
 =head1 NAME
 
 File::IsSorted - check if the lines of a file are sorted lexicographically
+
+=head1 SYNOPSIS
+
+    use File::IsSorted ();
+
+    my $checker = File::IsSorted->new;
+
+    $checker->is_file_sorted({ path => ".gitignore" });
 
 =head2 $checker->is_filehandle_sorted({fh => $input_fh, id => "my-file.txt"});
 

@@ -34,6 +34,16 @@ __END__
 
 Test::File::IsSorted - test files for being lexicographical sorted.
 
+=head1 SYNOPSIS
+
+    use Test::More tests => 1;
+
+    use Test::File::IsSorted ();
+
+    # TEST
+    Test::File::IsSorted::are_sorted([".gitignore", "MANIFEST.SKIP"],
+        "Files are sorted");
+
 =head1 FUNCTIONS
 
 =head2 are_sorted([@paths], $blurb);
