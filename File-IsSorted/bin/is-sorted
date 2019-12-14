@@ -1,0 +1,23 @@
+#!/usr/bin/env perl
+
+# ABSTRACT: checks if the lines in the specified files are sorted
+
+use strict;
+use warnings;
+
+use App::File::IsSorted;
+
+App::File::IsSorted->run;
+
+# PODNAME: is-sorted
+
+=head1 NAME
+
+=head1 SYNOPSIS
+
+    shlomif@telaviv1:~/conf/trunk$ is-sorted check .gitignore
+    shlomif@telaviv1:~/conf/trunk$
+
+=head1 SEE ALSO
+
+=cut
