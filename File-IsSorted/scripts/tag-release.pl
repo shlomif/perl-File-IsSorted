@@ -14,9 +14,10 @@ if ( !defined($version) )
     die "Version is undefined!";
 }
 
-my @cmd = (
-    "git", "tag", "-m", "Tagging the XML-Grammar-Fiction release as $version",
-    "perl-File-IsSorted-$version",
+my $PROJECT = "perl-File-IsSorted";
+my @cmd     = (
+    "git", "tag", "-m", "Tagging the $PROJECT release as $version",
+    "$PROJECT-$version",
 );
 
 print join( " ", map { /\s/ ? qq{"$_"} : $_ } @cmd ), "\n";
