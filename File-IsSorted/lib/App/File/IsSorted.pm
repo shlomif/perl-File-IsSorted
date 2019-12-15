@@ -13,7 +13,13 @@ __END__
 
 App::File::IsSorted - see L<is-sorted>
 
+=head1 DESCRIPTION
+
+Check if the lines of files are sorted.
+
 =head1 SYNOPSIS
+
+    is-sorted check .gitignore
 
 =head1 METHODS
 

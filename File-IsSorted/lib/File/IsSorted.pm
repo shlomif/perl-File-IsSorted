@@ -60,6 +60,13 @@ File::IsSorted - check if the lines of a file are sorted lexicographically
 
     $checker->is_file_sorted({ path => ".gitignore" });
 
+=head1 DESCRIPTION
+
+This checks if the lines of files or filehandles are monotonically and lexicographically
+increasing, (= are already sorted). It may consume less RAM and be faster than the
+naive way of doing C<< cmp myfile.txt <(LC_ALL=C sort myfile.txt) >> and it runs at
+O(n) instead of O(n*log(n)) time and keeps O(1) lines instead of O(n).
+
 =head2 $checker->is_filehandle_sorted({fh => $input_fh, id => "my-file.txt"});
 
 Checks if $input_fh is sorted - throws an exception if it is not sorted and returns true
