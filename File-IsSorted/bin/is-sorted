@@ -20,4 +20,8 @@ App::File::IsSorted->run;
 
 =head1 SEE ALSO
 
+L<sorted|https://metacpan.org/pod/distribution/App-sorted/script/sorted> by
+perlancar is a command line utility which was inspired by B<is-sorted> and
+which has many extra features.
+
 =cut
