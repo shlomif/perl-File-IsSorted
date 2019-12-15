@@ -34,14 +34,6 @@ __END__
 
 Test::File::IsSorted - test files for being lexicographical sorted.
 
-=head1 DESCRIPTION
-
-This checks if the lines of files or filehandles are monotonically and lexicographically
-increasing, (= are already sorted). It may consume less RAM and be faster than the
-naive way of doing C<< cmp myfile.txt <(LC_ALL=C sort myfile.txt) >> and it runs at
-O(n) instead of O(n*log(n)) time and keeps O(1) lines instead of O(n).
-
-
 =head1 SYNOPSIS
 
     use Test::More tests => 1;
@@ -51,6 +43,13 @@ O(n) instead of O(n*log(n)) time and keeps O(1) lines instead of O(n).
     # TEST
     Test::File::IsSorted::are_sorted([".gitignore", "MANIFEST.SKIP"],
         "Files are sorted");
+
+=head1 DESCRIPTION
+
+This checks if the lines of files or filehandles are monotonically and lexicographically
+increasing, (= are already sorted). It may consume less RAM and be faster than the
+naive way of doing C<< cmp myfile.txt <(LC_ALL=C sort myfile.txt) >> and it runs at
+O(n) instead of O(n*log(n)) time and keeps O(1) lines instead of O(n).
 
 =head1 FUNCTIONS
 
