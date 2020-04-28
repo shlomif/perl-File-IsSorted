@@ -5,7 +5,7 @@ use warnings;
 
 use parent 'Test::Builder::Module';
 
-use List::Util qw/ all /;
+use List::Util 1.34 qw/ all /;
 use File::IsSorted ();
 
 my $CLASS = __PACKAGE__;

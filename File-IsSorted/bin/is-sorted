@@ -5,9 +5,9 @@
 use strict;
 use warnings;
 
-use App::File::IsSorted;
+use App::File::IsSorted ();
 
-App::File::IsSorted->run;
+App::File::IsSorted->run();
 
 # PODNAME: is-sorted
 
