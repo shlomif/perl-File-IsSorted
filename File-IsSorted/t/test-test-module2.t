@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use autodie;
 
-use Test::More tests => 1;
+use Test::More tests => 2;
 use Path::Tiny qw/ path tempdir tempfile cwd /;
 
 use Test::File::IsSorted ();
@@ -38,4 +38,10 @@ EOF
     };
     my $err = $@;
     ok( $err, "filenames are not sorted" );
+
+    # TEST
+    Test::File::IsSorted::are_sorted2(
+        [ "$fh", "$fh2" ],
+        "Filenames are sorted",
+    );
 }
